@@ -1,0 +1,27 @@
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Node.js/npm
+node_modules/
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+
+# Build directories
+dist/
+build/
+
+# Image caches
+*.webp
+*.avif
+
+# Optional (if you add these later)
+.sass-cache/
+__pycache__/
