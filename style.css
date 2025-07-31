@@ -1,35 +1,115 @@
+/* Base Styles */
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f9fafb;
-    color: #111827;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #e5e7eb;
+  z-index: 1;
+}
+
+.dark .timeline::before {
+  background-color: #4b5563;
+}
+
+/* Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animation-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Project Card Hover Effect */
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Social Icons */
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 0.5rem;
   }
   
-  header {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 2rem;
-    text-align: center;
+  .timeline-content {
+    margin-left: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
   }
   
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem;
+  nav, footer, #back-to-top {
+    display: none !important;
   }
   
-  main section {
-    margin-bottom: 2rem;
+  section {
+    page-break-after: avoid;
+    page-break-inside: avoid;
   }
-  
-  h2 {
-    color: #1e40af;
-    margin-bottom: 0.5rem;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #e5e7eb;
-  }
-  
+}
+
+/* Skills Tags */
+.skill-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode adjustments */
+.dark .skill-tag {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
